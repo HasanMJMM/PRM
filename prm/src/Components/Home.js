@@ -4,7 +4,7 @@ import Layout from "../layout/Layout";
 function Home(props) {
     return (
         <Layout>
-            Home
+            This is home page
         </Layout>
     );
 }
