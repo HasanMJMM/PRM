@@ -156,3 +156,12 @@
     width: 600px!important;
   }
 }
+
+.btn-pink {
+  background-color: black;
+  color: #fff;
+}
+
+.btn-pink:hover {
+  background-color: #ff4081;
+}
