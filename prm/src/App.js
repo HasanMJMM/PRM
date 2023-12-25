@@ -1,23 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './Header'
-import Sidebar from './sidebar'
-import Home from './Home'
+import './App.css';
+import {Route, Routes} from "react-router-dom";
+import Home from "./Components/Home";
 
 function App() {
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
-
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
-
-  return (
-    <div className='grid-container'>
-      <Header OpenSidebar={OpenSidebar}/>
-      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <Home />
-    </div>
-  )
+    return (
+        <div className="">
+            <Routes>
+                <Route path="/home" element={<Home/>}/>
+            </Routes>
+        </div>
+    );
 }
 
-export default App
+export default App;
