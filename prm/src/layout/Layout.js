@@ -19,8 +19,8 @@ function Layout({children}) {
         dispatch(changeToggle(!open));
         // setOpen(!open)
     }
-    console.log(open);
-    console.log(show);
+    // console.log(open);
+    // console.log(show);
 
     return (
         <div className="container-fluid">
