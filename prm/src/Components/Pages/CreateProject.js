@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectForm from "./Widgets/ProjectForm";
-import Layout from "../layout/Layout";
+import ProjectForm from "../Widgets/ProjectForm";
+import Layout from "../../layout/Layout";
 
 
 function CreateProject(props) {
