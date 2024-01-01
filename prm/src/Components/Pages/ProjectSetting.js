@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import Layout from "../layout/Layout";
-import ProjectForm from "./Widgets/ProjectForm";
+import Layout from "../../layout/Layout";
+import ProjectForm from "../Widgets/ProjectForm";
 
 function ProjectSetting(props) {
     const [formDataForUpdate, setFormDataForUpdate] = useState({

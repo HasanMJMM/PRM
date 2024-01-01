@@ -28,7 +28,8 @@ body {
 }
 
 .side-menu-item {
-  color: #7C7C7C !important;
+  color: white !important;
+  /*color: #7C7C7C !important;*/
   font-size: 16px !important;
   font-weight: 500 !important;
   padding: 8px 16px;
@@ -42,8 +43,13 @@ body {
 
 .side-menu-item:hover,
 .side-menu-active {
-  color: #5030E5 !important;
-  background-color: #EBF8F2;
+  /*color: #5030E5 !important;*/
+  color: #040720 !important;
+  background-color: #EBF4FA;
+  /*background-color: #EBF8F2;*/
+}
+.side-bg-color {
+  background-color: #5030E5;
 }
 
 .mt-2px {

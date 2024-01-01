@@ -26,7 +26,7 @@ function Layout({children}) {
         <div className="container-fluid">
             <div className="row flex-nowrap">
                 <div
-                    className={(!open ? " col-xl-2" : " w-100px") + (!show ? " mobile-navbar-hide " : " mobile-show ") + " col-auto col-md-1 px-0 bg-white border-right min-vh-100 trans"}>
+                    className={(!open ? " col-xl-2" : " w-100px") + (!show ? " mobile-navbar-hide " : " mobile-show ") + " col-auto col-md-1 px-0 side-bg-color border-right min-vh-100 trans"}>
                     <div className={"close-btn-container mobile-hide"} onClick={toggleDrawer}>
                         <img src={SideClose} alt="SideClose" className={!!open && "rotate-180"}/>
                     </div>
