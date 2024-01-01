@@ -1,23 +1,42 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './Header'
-import Sidebar from './sidebar'
-import Home from './Home'
+import './App.css';
+import {Route, Routes} from "react-router-dom";
+
+import Home from "./Components/home/home";
+import Tasks from "./Components/tasks/tasks";
+import Calender from "./Components/calender/calender";
+import Member from "./Components/member/member";
+import Settings from "./Components/settings/settings";
+import Login from "./Components/logout/login";
+// import ConfirmationDialog from "./Components/utils-components/confirmation-dialog";
+// import Loader from "./Components/utils-components/loader";
+
+
+import CreateProject from "./Components/Pages/CreateProject";
+import ProjectSetting from "./Components/Pages/ProjectSetting";
+import EditProfile from "./Components/Pages/EditProfile";
+
 
 function App() {
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+    return (
+        <div className="">
+            {/* <Loader/>
+            <ConfirmationDialog/> */}
+            <Routes>
+                <Route path="/home" element={<Home/>}/>
 
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
+                <Route path="/tasks" element={<Tasks/>}/>
+                <Route path="/calendar" element={<Calender/>}/>
+                <Route path="/member" element={<Member/>}/>
+                <Route path="/settings" element={<Settings/>}/>
+                <Route path="/login" element={<Login/>}/>
 
-  return (
-    <div className='grid-container'>
-      <Header OpenSidebar={OpenSidebar}/>
-      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <Home />
-    </div>
-  )
+                <Route path="/createProject" element={<CreateProject/>}/>
+                <Route path="/projectSetting" element={<ProjectSetting/>}/>
+                <Route path="/editProfile" element={<EditProfile/>}/>
+
+            </Routes>
+        </div>
+    );
 }
 
-export default App
+export default App;
