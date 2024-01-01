@@ -10,7 +10,6 @@ import Login from "./Components/logout/login";
 // import ConfirmationDialog from "./Components/utils-components/confirmation-dialog";
 // import Loader from "./Components/utils-components/loader";
 
-import Home from "./Components/Pages/Home";
 import CreateProject from "./Components/Pages/CreateProject";
 import ProjectSetting from "./Components/Pages/ProjectSetting";
 import EditProfile from "./Components/Pages/EditProfile";
