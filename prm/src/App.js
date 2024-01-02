@@ -7,11 +7,16 @@ import Calender from "./Components/calender/calender";
 import Member from "./Components/member/member";
 import Settings from "./Components/settings/settings";
 import Login from "./Components/logout/login";
+
+import Signin from "./Components/Pages/signin";
+import CreateAccount from "./Components/Pages/createAccount";
+// import ConfirmationDialog from "./Components/utils-components/confirmation-dialog";
+// import Loader from "./Components/utils-components/loader";
+
 import CreateProject from "./Components/Pages/CreateProject";
 import ProjectSetting from "./Components/Pages/ProjectSetting";
 import EditProfile from "./Components/Pages/EditProfile";
 import CreateOrganization from "./Components/Pages/CreateOrganization";
-
 
 function App() {
     return (
