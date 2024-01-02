@@ -17,6 +17,9 @@ body {
 .bg-default {
   background-color: rgb(249, 250, 251) !important;
 }
+.common-color {
+  color:  #5030E5;
+}
 
 .red-dot {
   position: absolute;
@@ -778,7 +781,30 @@ body {
 .toggle-active-feather {
   color: #22C674;
 }
-
+ /*new my css*/
+.edit-img {
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border: 1px solid #999999;
+  border-radius: 50%;
+}
+@media (max-width: 1000px) {
+  .edit-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (max-width: 700px) {
+  .edit-img {
+    width: 60px;
+    height: 60px;
+  }
+}
+/*new my css*/
 
 @media (max-width: 768px) {
   .flex.flex-column {

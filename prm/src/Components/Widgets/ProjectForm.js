@@ -54,9 +54,9 @@ function ProjectForm({props, initialData, onSubmit}) {
 
     return (
         <div className='container'>
-            <div className='col-md-6'>
+            <div className='col-lg-6 col-md-12'>
                 <div className='row mt-4'>
-                    <div>
+                    <div className='common-color mb-4'>
                         {props === "create" && <h2>Create Project</h2>}
                         {props === "update" && <h2>Update Project</h2>}
                     </div>
