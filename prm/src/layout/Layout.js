@@ -28,7 +28,7 @@ function Layout({children}) {
                 <div
                     className={(!open ? " col-xl-2" : " w-100px") + (!show ? " mobile-navbar-hide " : " mobile-show ") + " col-auto col-md-1 px-0 side-bg-color border-right min-vh-100 trans"}>
                     <div className={"close-btn-container mobile-hide"} onClick={toggleDrawer}>
-                        <img src={SideClose} alt="SideClose" className={!!open && "rotate-180"}/>
+                        <FeatherIcon icon="align-right"/>
                     </div>
                     <div
                         className="d-flex flex-column align-items-center align-items-sm-start px-2 pt-2 text-white pt-4">
@@ -103,7 +103,7 @@ function Layout({children}) {
                                 className={({isActive}) => isActive ? "side-menu-item side-menu-active" : "side-menu-item"}
                                 to={"/msg"}>
                                 <div className={'d-flex'}>
-                                    <FeatherIcon icon="settings" className={!open ? 'me-2' : "ms-1"}/>
+                                    <FeatherIcon icon="message-square" className={!open ? 'me-2' : "ms-1"}/>
                                     {!open && <div className={''}>Navaneethan</div>}
                                 </div>
                             </NavLink>
@@ -114,7 +114,7 @@ function Layout({children}) {
                                 className={({isActive}) => isActive ? "side-menu-item side-menu-active" : "side-menu-item"}
                                 to={"/msg"}>
                                 <div className={'d-flex'}>
-                                    <FeatherIcon icon="settings" className={!open ? 'me-2' : "ms-1"}/>
+                                    <FeatherIcon icon="message-square" className={!open ? 'me-2' : "ms-1"}/>
                                     {!open && <div className={''}>Hasan</div>}
                                 </div>
                             </NavLink>
@@ -124,7 +124,7 @@ function Layout({children}) {
                                 className={({isActive}) => isActive ? "side-menu-item side-menu-active" : "side-menu-item"}
                                 to={"/msg"}>
                                 <div className={'d-flex'}>
-                                    <FeatherIcon icon="settings" className={!open ? 'me-2' : "ms-1"}/>
+                                    <FeatherIcon icon="message-square" className={!open ? 'me-2' : "ms-1"}/>
                                     {!open && <div className={''}>Hasan</div>}
                                 </div>
                             </NavLink>
@@ -134,7 +134,7 @@ function Layout({children}) {
                                 className={({isActive}) => isActive ? "side-menu-item side-menu-active" : "side-menu-item"}
                                 to={"/msg"}>
                                 <div className={'d-flex'}>
-                                    <FeatherIcon icon="settings" className={!open ? 'me-2' : "ms-1"}/>
+                                    <FeatherIcon icon="message-square" className={!open ? 'me-2' : "ms-1"}/>
                                     {!open && <div className={''}>Hasan</div>}
                                 </div>
                             </NavLink>
@@ -159,9 +159,10 @@ function Layout({children}) {
                                     <li className="nav-item px-2">
                                         <a className="nav-link  position-relative" aria-current="page" href="#">
 
-                                            <img src={Msg} alt=""/></a>
+                                            <img src={Msg} alt=""/>
+                                        </a>
                                     </li>
-                                    <div> nava</div>
+                                    {/*<div> nava</div>*/}
                                     <li className="nav-item px-2">
                                         <a className="nav-link  position-relative p-0" aria-current="page" href="#">
 

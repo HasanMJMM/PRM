@@ -68,7 +68,7 @@ function ProjectForm({props, initialData, onSubmit}) {
                     </div>
                     <div className='col-md-10'>
                         <form onSubmit={handleSubmit}>
-                            <div className="mb-3">
+                            <div className="mb-4">
                                 <label htmlFor="name" className="form-label">Name</label>
                                 <input type="text" className="form-control" name="name"
                                        placeholder="Enter your project name" value={formData.name}
@@ -77,7 +77,7 @@ function ProjectForm({props, initialData, onSubmit}) {
                                     <p style={{color: "red"}}>{formData.errors.name}</p>
                                 )}
                             </div>
-                            <div className="mb-3">
+                            <div className="mb-4">
                                 <label htmlFor="key" className="form-label">Key</label>
                                 <input type="text" className="form-control" name="key"
                                        placeholder="Enter your key" value={formData.key} onChange={handleChange}/>
@@ -85,7 +85,7 @@ function ProjectForm({props, initialData, onSubmit}) {
                                     <p style={{color: "red"}}>{formData.errors.key}</p>
                                 )}
                             </div>
-                            <div className="mb-3">
+                            <div className="mb-4">
                                 <label htmlFor="teamType" className="form-label">Team type</label>
                                 <select name="teamType" className="form-select" value={formData.teamType}
                                         onChange={handleChange}>
@@ -99,7 +99,7 @@ function ProjectForm({props, initialData, onSubmit}) {
                                     <p style={{color: "red"}}>{formData.errors.teamType}</p>
                                 )}
                             </div>
-                            <div className="mb-3">
+                            <div className="mb-4">
                                 <label htmlFor="description" className="form-label">Description</label>
                                 <textarea className="form-control" name="desc" rows="3" value={formData.desc}
                                           onChange={handleChange}></textarea>

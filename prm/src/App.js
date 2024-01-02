@@ -10,6 +10,7 @@ import Login from "./Components/logout/login";
 import CreateProject from "./Components/Pages/CreateProject";
 import ProjectSetting from "./Components/Pages/ProjectSetting";
 import EditProfile from "./Components/Pages/EditProfile";
+import CreateOrganization from "./Components/Pages/CreateOrganization";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/createProject" element={<CreateProject/>}/>
                 <Route path="/projectSetting" element={<ProjectSetting/>}/>
                 <Route path="/editProfile" element={<EditProfile/>}/>
+                <Route path="/createOrganization" element={<CreateOrganization/>}/>
             </Routes>
         </div>
     );

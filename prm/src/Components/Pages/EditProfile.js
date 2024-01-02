@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import Layout from "../../layout/Layout";
-import Edit_img from "../../assets/edit-profile-img-preview.jpg";
 import {useNavigate} from "react-router-dom";
 
 function EditProfile() {
@@ -62,7 +61,7 @@ function EditProfile() {
                                 <div className="edit-img mb-3">
                                     {/*<img src={Edit_img} alt="Profile image"/>*/}
                                 </div>
-                                <div className="row mb-3">
+                                <div className="row mb-4">
                                     <div className="col-md-6">
                                         <label htmlFor="fName" className="form-label">First name</label>
                                         <input type="text" className="form-control" placeholder="First name"
@@ -76,13 +75,13 @@ function EditProfile() {
                                         />
                                     </div>
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-4">
                                     <label htmlFor="email" className="form-label">Email address</label>
                                     <input type="email" className="form-control" name="email"
                                            value={formData.email} onChange={handleChange}
                                     />
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-4">
                                     <label htmlFor="phoneNo" className="form-label">Contact Number</label>
                                     <input type="text" className="form-control" name="phoneNo"
                                            value={formData.phoneNo} onChange={handleChange}
