@@ -7,6 +7,7 @@ import Calender from "./Components/calender/calender";
 import Member from "./Components/member/member";
 import Settings from "./Components/settings/settings";
 import Login from "./Components/logout/login";
+import ProjectPlan from './Components/projectPlan/projectPlan';
 // import ConfirmationDialog from "./Components/utils-components/confirmation-dialog";
 // import Loader from "./Components/utils-components/loader";
 
@@ -29,7 +30,7 @@ function App() {
                 <Route path="/member" element={<Member/>}/>
                 <Route path="/settings" element={<Settings/>}/>
                 <Route path="/login" element={<Login/>}/>
-
+                <Route path="/projectPlan" element={<ProjectPlan/>}/>
                 <Route path="/createProject" element={<CreateProject/>}/>
                 <Route path="/projectSetting" element={<ProjectSetting/>}/>
                 <Route path="/editProfile" element={<EditProfile/>}/>
