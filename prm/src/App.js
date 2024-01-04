@@ -1,5 +1,5 @@
-import './App.css';
-import {Route, Routes} from "react-router-dom";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
 
 import Home from "./Components/home/home";
 import Tasks from "./Components/tasks/tasks";
@@ -11,19 +11,17 @@ import ProjectPlan from './Components/projectPlan/projectPlan';
 // import ConfirmationDialog from "./Components/utils-components/confirmation-dialog";
 // import Loader from "./Components/utils-components/loader";
 
-
 import CreateProject from "./Components/Pages/CreateProject";
 import ProjectSetting from "./Components/Pages/ProjectSetting";
 import EditProfile from "./Components/Pages/EditProfile";
 
-
 function App() {
-    return (
-        <div className="">
-            {/* <Loader/>
+  return (
+    <div className="">
+      {/* <Loader/>
             <ConfirmationDialog/> */}
-            <Routes>
-                <Route path="/home" element={<Home/>}/>
+      <Routes>
+        <Route path="/home" element={<Home />} />
 
                 <Route path="/tasks" element={<Tasks/>}/>
                 <Route path="/calendar" element={<Calender/>}/>

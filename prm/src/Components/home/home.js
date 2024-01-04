@@ -44,7 +44,7 @@ function Home(props) {
                 <div className={"p-5"}>
                     <div className={"project_container"}>
                     <div className={"students_container"}>
-                        <div><h3 className={"content-heading"}>Appointment</h3></div>
+                        <div><h3 className={"content-heading"}>Project</h3></div>
                         <div className={"students-dropdown-container d-flex justify-content-end pb-3"}>
                             <div className={"table-btn-container"}>
 
@@ -90,9 +90,11 @@ function Home(props) {
                                     <td>{data.Key}</td>
                                     <td>{data.Type}</td>
                                     <td>{data.Lead}</td>
-                                    <td><FeatherIcon className={"action-icons"} icon={"eye"} />
+                                    <td>
+                                        {/* <FeatherIcon className={"action-icons"} icon={"eye"} /> */}
                                         <FeatherIcon className={"action-icons"} icon={"edit"} />
-                                        <FeatherIcon className={"action-icons text-red"} icon={"trash-2"} /></td>
+                                        {/* <FeatherIcon className={"action-icons text-red"} icon={"trash-2"} /> */}
+                                        </td>
                                 </tr>))}
                             </tbody>
                         </table>
