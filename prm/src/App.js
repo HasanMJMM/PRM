@@ -10,12 +10,13 @@ import Login from "./Components/logout/login";
 import CreateProject from "./Components/Pages/CreateProject";
 import ProjectSetting from "./Components/Pages/ProjectSetting";
 import EditProfile from "./Components/Pages/EditProfile";
-import CreateOrganization from "./Components/Pages/CreateOrganization";
+import DropPage from "./Components/Pages/DropPage";
+import Dad from "./Components/dad/Dad";
 
 
 function App() {
     return (
-        <div className="">
+        <div>
             <Routes>
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/tasks" element={<Tasks/>}/>
@@ -26,7 +27,8 @@ function App() {
                 <Route path="/createProject" element={<CreateProject/>}/>
                 <Route path="/projectSetting" element={<ProjectSetting/>}/>
                 <Route path="/editProfile" element={<EditProfile/>}/>
-                <Route path="/createOrganization" element={<CreateOrganization/>}/>
+                <Route path="/dropPage" element={<DropPage/>}/>
+                <Route path="/dad" element={<Dad/>}/>
             </Routes>
         </div>
     );
