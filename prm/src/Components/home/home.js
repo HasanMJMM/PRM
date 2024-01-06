@@ -90,9 +90,11 @@ function Home(props) {
                                     <td>{data.Key}</td>
                                     <td>{data.Type}</td>
                                     <td>{data.Lead}</td>
-                                    <td><FeatherIcon className={"action-icons"} icon={"eye"} />
+                                    <td>
+                                        {/*<FeatherIcon className={"action-icons"} icon={"eye"} />*/}
                                         <FeatherIcon className={"action-icons"} icon={"edit"} />
-                                        <FeatherIcon className={"action-icons text-red"} icon={"trash-2"} /></td>
+                                        {/*<FeatherIcon className={"action-icons text-red"} icon={"trash-2"} />*/}
+                                    </td>
                                 </tr>))}
                             </tbody>
                         </table>
