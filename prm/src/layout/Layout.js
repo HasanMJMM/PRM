@@ -35,7 +35,7 @@ function Layout({ children }) {
         >
           <div className="row">
             <div className="col">
-              <img src={logopath} className={open ? "hide-logo" : "logo-prm"} />
+              {/*<img src={logopath} className={open ? "hide-logo" : "logo-prm"} />*/}
             </div>
             <div className="col">
               <div
