@@ -3,6 +3,8 @@ import Layout from "../../layout/Layout";
 
 import FeatherIcon from 'feather-icons-react';
 import {values, pick, filter, pluck} from "underscore";
+import ProjectForm from '../Widgets/ProjectForm';
+
 
 function Home(props) {
 
@@ -92,7 +94,23 @@ function Home(props) {
                                     <td>{data.Lead}</td>
                                     <td>
                                         {/* <FeatherIcon className={"action-icons"} icon={"eye"} /> */}
-                                        <FeatherIcon className={"action-icons"} icon={"edit"} />
+                                        {/* <FeatherIcon className={"action-icons"} icon={"edit"} /> */}
+                                        <td className={"table-action"}>
+
+                                    <div type="button"
+                                            onClick={() => {
+                                                setModalType("edit");
+                                                setModalShow(true)
+                                            }}>
+                                        <FeatherIcon className={"action-icons"} icon={"edit"} onClick={() => {
+                                            setModalType("edit")
+                                           
+                                            }}/>
+
+                                    </div>
+
+
+                                </td>
                                         {/* <FeatherIcon className={"action-icons text-red"} icon={"trash-2"} /> */}
                                         </td>
                                 </tr>))}
@@ -101,6 +119,7 @@ function Home(props) {
                         {projectsList.length === 0 && <div className={"text-center py-5 fw-bold"}>No projects Data Found,Please Add</div>}
                 </div>
             </div>
+            
 
         </Layout>
     );

@@ -14,6 +14,8 @@ import ProjectPlan from './Components/projectPlan/projectPlan';
 import CreateProject from "./Components/Pages/CreateProject";
 import ProjectSetting from "./Components/Pages/ProjectSetting";
 import EditProfile from "./Components/Pages/EditProfile";
+import Signin from "./Components/Pages/signin";
+import CreateAccount from "./Components/Pages/createAccount";
 
 function App() {
   return (
@@ -23,19 +25,20 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
 
-                <Route path="/tasks" element={<Tasks/>}/>
-                <Route path="/calendar" element={<Calender/>}/>
-                <Route path="/member" element={<Member/>}/>
-                <Route path="/settings" element={<Settings/>}/>
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/projectPlan" element={<ProjectPlan/>}/>
-                <Route path="/createProject" element={<CreateProject/>}/>
-                <Route path="/projectSetting" element={<ProjectSetting/>}/>
-                <Route path="/editProfile" element={<EditProfile/>}/>
+        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/calendar" element={<Calender />} />
+        <Route path="/member" element={<Member />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/ca" element={<CreateAccount />} />
 
-            </Routes>
-        </div>
-    );
+        <Route path="/createProject" element={<CreateProject />} />
+        <Route path="/projectSetting" element={<ProjectSetting />} />
+        <Route path="/editProfile" element={<EditProfile />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
