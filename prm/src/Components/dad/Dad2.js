@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import "./Dad.scss";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import axios from "axios";
-import Card from "./Card/Card";
+// import Card from "./Card/Card";
 import Layout from "../../layout/Layout";
 
-const Dad = () => {
+const Dad2 = () => {
   const [taskList, setTaskList] = useState([]);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ const Dad = () => {
         const groupedTasks = groupTasksByStatus(response.data);
         setTaskList(groupedTasks);
         console.log("Task listed successfully!");
+        console.log(groupedTasks);
       })
       .catch((error) => {
         console.error("Error fetching task list:", error);
@@ -34,9 +35,10 @@ const Dad = () => {
       result[status].tasks.push({
         id: task.id.toString(),
         title: task.taskName,
-        // desc: task.description,
+        desc: task.description,
         member: task.member,
         deadline: task.deadline,
+        status: task.status,
       });
       return result;
     }, {});
@@ -44,13 +46,13 @@ const Dad = () => {
   };
 
   const onDragEnd = (result) => {
-    console.log(result);
     if (!result.destination) return;
     const { source, destination } = result;
+    console.log(result);
 
     if (source.droppableId !== destination.droppableId) {
       const updatedTaskList = [...taskList];
-      
+
       const sourceColIndex = taskList.findIndex(
         (e) => e.id === source.droppableId
       );
@@ -61,16 +63,33 @@ const Dad = () => {
       const sourceCol = taskList[sourceColIndex];
       const destinationCol = taskList[destinationColIndex];
 
-      const sourceTask = [...sourceCol.tasks];
-      const destinationTask = [...destinationCol.tasks];
+      const sourceTask = [...taskList[sourceColIndex].tasks];
+      const destinationTask = [...taskList[destinationColIndex].tasks];
 
       const [removed] = sourceTask.splice(source.index, 1);
       destinationTask.splice(destination.index, 0, removed);
 
-      taskList[sourceColIndex].tasks = sourceTask;
-      taskList[destinationColIndex].tasks = destinationTask;
+      updatedTaskList[sourceColIndex].tasks = sourceTask;
+      updatedTaskList[destinationColIndex].tasks = destinationTask;
 
-      setTaskList(taskList);
+      setTaskList(updatedTaskList);
+
+      const updatedTasks = updatedTaskList.flatMap((section) => section.tasks);
+      console.log(updatedTaskList);
+      console.log(updatedTasks);
+
+      axios
+        .put("http://127.0.0.1:8000/task", JSON.stringify(updatedTasks), {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          console.log("Tasks updated successfully:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error updating tasks:", error);
+        });
     }
   };
 
@@ -108,18 +127,18 @@ const Dad = () => {
                               }}
                             >
                               {/* <Card> */}
-                                {/* <div>
+                              {/* <div>
                                   {task.title}<br/>
                                   {task.member}<br/>
                                   {task.deadline}
                                 </div> */}
-                                <div className="card">
-                                  <div className="card-body">
-                                    <p className="card-text">{task.title}</p>
-                                    <p className="card-text">{task.member}</p>
-                                    <p className="card-text">{task.deadline}</p>
-                                  </div>
+                              <div className="card">
+                                <div className="card-body">
+                                  <p className="card-text">{task.title}</p>
+                                  <p className="card-text">{task.member}</p>
+                                  <p className="card-text">{task.deadline}</p>
                                 </div>
+                              </div>
                               {/* </Card> */}
                             </div>
                           )}
@@ -138,4 +157,4 @@ const Dad = () => {
   );
 };
 
-export default Dad;
+export default Dad2;
