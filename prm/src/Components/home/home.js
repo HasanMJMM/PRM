@@ -45,9 +45,9 @@ function Home(props) {
             <div className={"container"}>
                 <div className={"p-5"}>
                     <div className={"project_container"}>
-                    <div className={"students_container"}>
+                    
                         <div><h3 className={"content-heading"}>Project</h3></div>
-                        <div className={"students-dropdown-container d-flex justify-content-end pb-3"}>
+                        <div className={"projec-dropdown-container d-flex justify-content-end pb-3"}>
                             <div className={"table-btn-container"}>
 
                                 <div className={"appointment-search"}>
@@ -60,7 +60,7 @@ function Home(props) {
                                         </form>
                                     </div>
                                 </div>
-                                {<button type="button" className={"btn btn-secondary students-dropdown-btn"}
+                                {<button type="button" className={"btn btn-secondary tasks-dropdown-btn"}
                                         onClick={() => {
                                             setModalType("Add");
                                             setModalShow(true)
@@ -70,7 +70,7 @@ function Home(props) {
                                 </button>}
                             </div>
                         </div>
-                    </div>
+                    
                     </div>
                     
                         <table className={"table table-hover table-striped "} >
@@ -113,11 +113,7 @@ function Home(props) {
                                 </td>
                                         {/* <FeatherIcon className={"action-icons text-red"} icon={"trash-2"} /> */}
                                         </td>
-                                    <td>
-                                        {/*<FeatherIcon className={"action-icons"} icon={"eye"} />*/}
-                                        <FeatherIcon className={"action-icons"} icon={"edit"} />
-                                        {/*<FeatherIcon className={"action-icons text-red"} icon={"trash-2"} />*/}
-                                    </td>
+                                   
                                 </tr>))}
                             </tbody>
                         </table>
