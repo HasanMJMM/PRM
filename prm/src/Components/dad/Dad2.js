@@ -14,6 +14,7 @@ const Dad2 = () => {
       .then((response) => {
         const groupedTasks = groupTasksByStatus(response.data);
         setTaskList(groupedTasks);
+        console.log("Axios response", response.data);
         console.log("Task listed successfully!");
         console.log(groupedTasks);
       })
@@ -77,19 +78,29 @@ const Dad2 = () => {
       const updatedTasks = updatedTaskList.flatMap((section) => section.tasks);
       console.log(updatedTaskList);
       console.log(updatedTasks);
+      console.log("taskList", taskList);
 
-      axios
-        .put("http://127.0.0.1:8000/task", JSON.stringify(updatedTasks), {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((response) => {
-          console.log("Tasks updated successfully:", response.data);
-        })
-        .catch((error) => {
-          console.error("Error updating tasks:", error);
-        });
+      // axios
+      //   .put("http://127.0.0.1:8000/task", JSON.stringify(updatedTasks), {
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   })
+      //   .then((response) => {
+      //     console.log("Tasks updated successfully:", response.data);
+      //   })
+      //   .catch((error) => {
+      //     console.error("Error updating tasks:", error);
+      //   });
+
+      // axios
+      //   .put("http://127.0.0.1:8000/task", updatedTaskList)
+      //   .then((response) => {
+      //     console.log("Tasks updated successfully:", response.data);
+      //   })
+      //   .catch((error) => {
+      //     console.error("Error updating tasks:", error);
+      //   });
     }
   };
 
