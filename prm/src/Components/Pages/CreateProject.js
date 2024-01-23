@@ -5,13 +5,7 @@ import Layout from "../../layout/Layout";
 
 function CreateProject(props) {
     const handleCreate = (e, formData) => {
-        console.log("Create:", formData);
-        // e.preventDefault();
-        // if (validateForm()) {
-        //     console.log(formData)
-        // } else {
-        //     console.log("Form is invalid");
-        // }
+        console.log("Create:", formData);        
     };
     return (
         <Layout>
