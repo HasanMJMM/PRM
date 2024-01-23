@@ -260,7 +260,7 @@ function Layout({ children }) {
                       href="#"
                     >
                       <div className="red-dot" />
-                      <img src={Bell} alt="" />
+                       <img src={Bell} alt="" />
                     </a>
                   </li>
                   <li className="nav-item px-2">
@@ -269,7 +269,7 @@ function Layout({ children }) {
                       aria-current="page"
                       href="#"
                     >
-                      <img src={Msg} alt="" />
+                       <img src={Msg} alt="" />
                     </a>
                   </li>
                   <div> nava</div>
@@ -279,7 +279,7 @@ function Layout({ children }) {
                       aria-current="page"
                       href="#"
                     >
-                      <img src={Profile} alt="" />
+                       <img src={Profile} alt="" />
                     </a>
                   </li>
                 </ul>
