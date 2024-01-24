@@ -45,6 +45,7 @@ function ProjectForm({ props, initialData, onSubmit }) {
     console.log("Form is cancelled");
     navigate("/home");
   };
+  
   // const handleSubmit = (e) => {
   //   e.preventDefault();
   //   if (validateForm()) {
@@ -63,7 +64,7 @@ function ProjectForm({ props, initialData, onSubmit }) {
           .post("http://127.0.0.1:8000/project", projectData)
           .then(() => {
             console.log(projectData);
-            console.log("Project created successfully"); // Fix this line
+            console.log("Project created successfully");
             alert("Project created successfully!");
           })
           .catch(() => {

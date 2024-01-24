@@ -3,7 +3,6 @@ import "./Dad.scss";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import axios from "axios";
 // import Card from "./Card/Card";
-import Layout from "../../layout/Layout";
 
 const Dad2 = () => {
   const [taskList, setTaskList] = useState([]);
@@ -105,7 +104,7 @@ const Dad2 = () => {
   };
 
   return (
-    <Layout>
+    // <Layout>
       <div className="m-5">
         <DragDropContext onDragEnd={onDragEnd}>
           <div className="kanban">
@@ -164,7 +163,7 @@ const Dad2 = () => {
           </div>
         </DragDropContext>
       </div>
-    </Layout>
+    // </Layout>
   );
 };
 
