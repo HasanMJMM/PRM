@@ -6,13 +6,15 @@ import { TaskForm } from "./TaskForm";
 import Dad2 from "../dad/Dad2";
 import axios from "axios";
 import "./Task.css";
+import { useParams } from 'react-router-dom';
 
 function Tasks(props) {
   const [taskList, setTaskList] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/task")
+      .get(`http://127.0.0.1:8000/taskproject/${id}`)
       .then((response) => {
         setTaskList(response.data);
         console.log("Axios response", response.data);
@@ -21,7 +23,7 @@ function Tasks(props) {
       .catch((error) => {
         console.error("Error fetching task list:", error);
       });
-  }, []);
+  }, [id]);
 
   console.log(taskList);
 
