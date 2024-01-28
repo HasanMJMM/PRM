@@ -18,7 +18,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/home" element={<Home />} />
-        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/tasks/:id" element={<Tasks />} />
         <Route path="/calendar" element={<Calender />} />
         <Route path="/member" element={<Member />} />
         <Route path="/settings" element={<Settings />} />
@@ -27,7 +27,7 @@ function App() {
         <Route path="/projectSetting" element={<ProjectSetting />} />
         <Route path="/editProfile" element={<EditProfile />} />
         <Route path="/dropPage" element={<DropPage />} />
-        <Route path="/dad2" element={<Dad2/>} />
+        <Route path="/dad2" element={<Dad2 />} />
       </Routes>
     </div>
   );
