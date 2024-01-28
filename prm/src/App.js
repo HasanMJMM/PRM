@@ -2,12 +2,12 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./Components/home/home";
-import Tasks from "./Components/tasks/tasks";
+import Tasks from "./Components/tasks/Tasks";
 import Calender from "./Components/calender/calender";
 import Member from "./Components/member/member";
 import Settings from "./Components/settings/settings";
 import Login from "./Components/logout/login";
-import ProjectPlan from './Components/projectPlan/projectPlan';
+// import ProjectPlan from './Components/projectPlan/projectPlan';
 // import ConfirmationDialog from "./Components/utils-components/confirmation-dialog";
 // import Loader from "./Components/utils-components/loader";
 
