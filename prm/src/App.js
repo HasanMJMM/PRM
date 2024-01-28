@@ -12,6 +12,8 @@ import ProjectSetting from "./Components/Pages/ProjectSetting";
 import EditProfile from "./Components/Pages/EditProfile";
 import DropPage from "./Components/Pages/DropPage";
 import Dad2 from "./Components/dad/Dad2";
+import LogIn from "./Components/Pages/LogIn";
+import CreateAccount from "./Components/Pages/CreateAccount";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/editProfile" element={<EditProfile />} />
         <Route path="/dropPage" element={<DropPage />} />
         <Route path="/dad2" element={<Dad2 />} />
+        <Route path="/signIn" element={<LogIn />} />
+        <Route path="/caccount" element={<CreateAccount />} />
       </Routes>
     </div>
   );
