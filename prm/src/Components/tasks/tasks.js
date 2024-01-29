@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../layout/Layout";
 import FeatherIcon from "feather-icons-react";
 import { values, pick, filter } from "underscore";
-import {TaskForm} from "./taskForm";
+import { TaskForm } from "./TaskForm";
 import Dad2 from "../dad/Dad2";
 import axios from "axios";
 import "./Task.css";
@@ -61,7 +61,7 @@ function Tasks(props) {
       default:
         return "";
     }
-  };
+  }
 
   return (
     <Layout>
@@ -166,7 +166,7 @@ function Tasks(props) {
                           onClick={() => {
                             setModalType("View");
                             setModalShow(true);
-                            setModalData(task)
+                            setModalData(task);
                           }}
                         >
                           <FeatherIcon
