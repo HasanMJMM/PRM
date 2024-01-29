@@ -57,7 +57,7 @@ function Tasks(props) {
         return "bg-warning text-dark";
       case "Inprogress":
         return "bg-success text-white";
-      case "Completed":
+      case "Done":
         return "bg-primary text-white";
       default:
         return "";

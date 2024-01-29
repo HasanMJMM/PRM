@@ -63,12 +63,6 @@ function Home(props) {
                   <div className={"appointment-search"}>
                     <div className="container-fluid">
                       <form className="d-flex" role="search">
-                        <button
-                          className="btn btn-outline-success"
-                          type="submit"
-                        >
-                          Search
-                        </button>
                         <input
                           className="form-control project_btn me-2 w-50"
                           onChange={handleSearch}
@@ -76,6 +70,12 @@ function Home(props) {
                           placeholder="Search"
                           aria-label="Search"
                         />
+                        <button
+                          className="btn btn-outline-success"
+                          type="submit"
+                        >
+                          Search
+                        </button>
                       </form>
                     </div>
                   </div>

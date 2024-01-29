@@ -6,8 +6,9 @@ import iconpath3 from "../../assets/icons/email-icon.svg";
 import iconpath4 from "../../assets/icons/name-icon.svg";
 import logopath from "../../assets/logo.svg";
 import "./auth.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-// ... (previous imports)
 
 function CreateAccount() {
   const [formData, setFormData] = useState({
@@ -27,6 +28,17 @@ function CreateAccount() {
     password: "",
     rPassword: "",
   });
+
+  const initialFormData = {
+    email: "",
+    username: "",
+    fName: "",
+    lName: "",
+    password: "",
+    rPassword: "",
+  };
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -96,8 +108,22 @@ function CreateAccount() {
     if (hasErrors) {
       setErrors(newErrors);
     } else {
-      // Form submission logic or further actions
-      console.log("Form submitted:", formData);
+      try {
+        axios
+          .post("http://127.0.0.1:8000/register", formData)
+          .then(() => {
+            console.log(formData);
+            setFormData(initialFormData);
+            console.log("Account created successfully");
+            alert("Account created successfully!");
+            navigate("/signIn");
+          })
+          .catch(() => {
+            alert("Account creation failed!");
+          });
+      } catch (err) {
+        alert("Account creation Failed");
+      }
     }
   };
 

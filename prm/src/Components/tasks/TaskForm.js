@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { values } from "underscore";
+import { useParams } from "react-router-dom";
 
 export const TaskForm = (props) => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ export const TaskForm = (props) => {
     deadline: "",
     errors: {},
   });
+  const navigate = useNavigate();
 
   const initialFormData = {
     taskName: "",
@@ -21,6 +23,7 @@ export const TaskForm = (props) => {
     errors: {},
   };
   const [userNames, setUserNames] = useState([]);
+  const { id } = useParams();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -74,16 +77,17 @@ export const TaskForm = (props) => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    console.log(id);
     try {
       if (validateForm()) {
         axios
-          .post("http://127.0.0.1:8000/task", formData)
+          .post(`http://127.0.0.1:8000/task/${id}`, formData)
           .then(() => {
             console.log(formData);
-            setFormData(initialFormData)
+            setFormData(initialFormData);
             console.log("Task created successfully");
             alert("Task created successfully!");
-            // setFormData("")
+            props.onHide();
           })
           .catch(() => {
             alert("Task creation failed!");
@@ -256,8 +260,8 @@ export const TaskForm = (props) => {
               onChange={handleChange}
             >
               {userNames.map((user, index) => (
-                <option key={index} value={user.userName}>
-                  {user.userName}
+                <option key={index} value={user.username}>
+                  {user.username}
                 </option>
               ))}
             </select>
