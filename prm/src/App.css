@@ -888,3 +888,86 @@ body {
   padding-right: 20%;
   padding-bottom: 15%;
 }
+.taskstate {
+  height: 24px;
+  min-width: 24px;
+  line-height: 0;
+  border-radius: 6px;
+  cursor: default;
+  -webkit-box-align: center;
+  align-items: center;
+  white-space: nowrap;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-transform: capitalize;
+  padding: 0px 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgb(17, 141, 87);
+  background-color: rgba(34, 197, 94, 0.16);
+}
+.tasks-dropdown-btn{
+  background-color: #5030e5 !important;
+  border: none !important;
+  margin-left: 5px;
+}
+*/
+
+.modal-right-top {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  transform: translate(0, 0) !important;
+}
+.project-settings-form{
+  padding: 24px;
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+.form-container {
+  /*border: 1px solid;*/
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+
+
+}
+.project-settings-btn {
+  gap: 5px;
+}
+.project-settings-btn{
+  background-color: #5030e5  !important;
+  border: none !important
+}
+
+/* Styles for the logout link container */
+.logout-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box !important;
+ 
+  padding: 8px 16px !important;
+  width: 10%;
+  
+}
+.modal-sm {
+  --bs-modal-width: 350px !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+  width: 100%;
+}
+
+
+

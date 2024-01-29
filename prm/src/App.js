@@ -7,9 +7,15 @@ import Calender from "./Components/calender/calender";
 import Member from "./Components/member/member";
 import Settings from "./Components/settings/settings";
 import Login from "./Components/logout/login";
+// import ProjectPlan from './Components/projectPlan/projectPlan';
+// import ConfirmationDialog from "./Components/utils-components/confirmation-dialog";
+// import Loader from "./Components/utils-components/loader";
+
 import CreateProject from "./Components/Pages/CreateProject";
 import ProjectSetting from "./Components/Pages/ProjectSetting";
 import EditProfile from "./Components/Pages/EditProfile";
+import Signin from "./Components/Pages/signin";
+import CreateAccount from "./Components/Pages/createAccount";
 import DropPage from "./Components/Pages/DropPage";
 import Dad2 from "./Components/dad/Dad2";
 import LogIn from "./Components/Pages/LogIn";
