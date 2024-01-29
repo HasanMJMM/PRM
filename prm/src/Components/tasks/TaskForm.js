@@ -247,8 +247,8 @@ export const TaskForm = (props) => {
               onChange={handleChange}
             >
               {userNames.map((user, index) => (
-                <option key={index} value={user.userName}>
-                  {user.userName}
+                <option key={index} value={user.username}>
+                  {user.username}
                 </option>
               ))}
             </select>
