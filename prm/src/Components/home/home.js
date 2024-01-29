@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom"; 
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "../../layout/Layout";
 import axios from "axios";
 import FeatherIcon from "feather-icons-react";
@@ -40,6 +40,11 @@ function Home(props) {
     }
   }
 
+  function handleIconClick(event) {
+    event.stopPropagation();
+    navigate("/projectSetting");
+  }
+
   return (
     <Layout>
       <div className={"container"}>
@@ -58,7 +63,12 @@ function Home(props) {
                   <div className={"appointment-search"}>
                     <div className="container-fluid">
                       <form className="d-flex" role="search">
-                        {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
+                        <button
+                          className="btn btn-outline-success"
+                          type="submit"
+                        >
+                          Search
+                        </button>
                         <input
                           className="form-control project_btn me-2 w-50"
                           onChange={handleSearch}
@@ -103,24 +113,28 @@ function Home(props) {
             </thead>
             <tbody>
               {projectsList.map((project, index) => (
-                <tr>
+                <tr
+                  key={project.id}
+                  onClick={() => navigate(`/tasks/${project.id}`)}
+                  style={{ cursor: "pointer" }}
+                >
                   <th scope="row">{project.id}</th>
                   <td>{project.name}</td>
                   <td>{project.key}</td>
                   <td>{project.proType}</td>
                   <td>{project.desc}</td>
-                  <td>
+                  <td onClick={(event) => handleIconClick(event)}>
                     <FeatherIcon className={"action-icons"} icon={"edit"} />
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          {/* {projectsList.length === 0 && (
+          {projectsList.length === 0 && (
             <div className={"text-center py-5 fw-bold"}>
-              No projects Data Found,Please Add
+              No Projects Found, Please Add
             </div>
-          )} */}
+          )}
         </div>
       </div>
     </Layout>

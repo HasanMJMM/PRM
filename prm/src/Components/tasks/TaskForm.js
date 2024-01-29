@@ -12,6 +12,14 @@ export const TaskForm = (props) => {
     deadline: "",
     errors: {},
   });
+
+  const initialFormData = {
+    taskName: "",
+    description: "",
+    member: "",
+    deadline: "",
+    errors: {},
+  };
   const [userNames, setUserNames] = useState([]);
 
   const handleChange = (e) => {
@@ -72,6 +80,7 @@ export const TaskForm = (props) => {
           .post("http://127.0.0.1:8000/task", formData)
           .then(() => {
             console.log(formData);
+            setFormData(initialFormData)
             console.log("Task created successfully");
             alert("Task created successfully!");
             // setFormData("")

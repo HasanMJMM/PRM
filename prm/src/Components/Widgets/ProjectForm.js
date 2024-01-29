@@ -10,6 +10,13 @@ function ProjectForm({ props, initialData, onSubmit }) {
     desc: "",
     errors: {},
   });
+  const initialProjectData = {
+    name: "",
+    key: "",
+    proType: "",
+    desc: "",
+    errors: {},
+  };
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,16 +52,6 @@ function ProjectForm({ props, initialData, onSubmit }) {
     console.log("Form is cancelled");
     navigate("/home");
   };
-  
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (validateForm()) {
-  //     console.log(projectData);
-  //     console.log("Project created");
-  //   } else {
-  //     console.log("Form is invalid");
-  //   }
-  // };
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -63,9 +60,11 @@ function ProjectForm({ props, initialData, onSubmit }) {
         axios
           .post("http://127.0.0.1:8000/project", projectData)
           .then(() => {
+            setProjectData(initialProjectData);
             console.log(projectData);
             console.log("Project created successfully");
             alert("Project created successfully!");
+            navigate("/home");
           })
           .catch(() => {
             alert("Project creation failed!");
