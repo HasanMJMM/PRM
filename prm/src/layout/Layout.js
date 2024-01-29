@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import Bell from "../assets/bell-icon.svg";
-import Msg from "../assets/msg-icon.svg";
+import React, { useState, useEffect } from "react";
 import Profile from "../assets/profile-img.svg";
 import SideClose from "../assets/icons/left-arrow.svg";
 import FeatherIcon from "feather-icons-react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeToggle } from "../redux/actions";
-import logopath from "../assets/logo-blue.svg";
+import { EditProfile } from "./EditProfile";
+import Dropdown from "react-bootstrap/Dropdown";
+import { useNavigate } from "react-router-dom";
+import logopath from "../assets/logo-white.png";
 
 function Layout({ children }) {
   const dispatch = useDispatch();
@@ -15,13 +16,27 @@ function Layout({ children }) {
   const open = useSelector((state) => {
     return state.setting.toggle;
   });
+  const [modalType, setModalType] = useState("view");
+  const [modalShow, setModalShow] = useState(false);
+  const [modalData, setModalData] = useState(false);
 
   function toggleDrawer() {
     dispatch(changeToggle(!open));
     // setOpen(!open)
   }
+  //   const toggleNotification = () => {
+  //     setShowNotification(!showNotification);
+  // };
+
   // console.log(open);
   // console.log(show);
+
+  const [profilePopupShow, setProfilePopupShow] = useState(false);
+
+  const handleProfileClick = () => {
+    setProfilePopupShow(!profilePopupShow);
+  };
+  const navigate = useNavigate();
 
   return (
     <div className="container-fluid">
@@ -35,7 +50,7 @@ function Layout({ children }) {
         >
           <div className="row">
             <div className="col">
-              {/*<img src={logopath} className={open ? "hide-logo" : "logo-prm"} />*/}
+              <img src={logopath} className={open ? "hide-logo" : "logo-prm"} />
             </div>
             <div className="col">
               <div
@@ -78,7 +93,7 @@ function Layout({ children }) {
                     ? "side-menu-item side-menu-active"
                     : "side-menu-item"
                 }
-                to={"/tasks"}
+                to={"/tdb"}
               >
                 <div className={"d-flex"}>
                   <FeatherIcon
@@ -89,7 +104,6 @@ function Layout({ children }) {
                 </div>
               </NavLink>
             </div>
-
             <div className={"w-100 px-sm-2"}>
               <NavLink
                 className={({ isActive }) =>
@@ -97,19 +111,19 @@ function Layout({ children }) {
                     ? "side-menu-item side-menu-active"
                     : "side-menu-item"
                 }
-                to={"/calendar"}
+                to={"/members"}
               >
                 <div className={"d-flex"}>
                   <FeatherIcon
-                    icon="calendar"
+                    icon="user"
                     className={!open ? "me-2" : "ms-1"}
                   />
-                  {!open && <div className={""}>Calendar</div>}
+                  {!open && <div className={""}>Members</div>}
                 </div>
               </NavLink>
             </div>
 
-            <div className={"w-100 px-sm-2"}>
+            {/* <div className={"w-100 px-sm-2"}>
               <NavLink
                 className={({ isActive }) =>
                   isActive
@@ -126,7 +140,8 @@ function Layout({ children }) {
                   {!open && <div className={""}>Member </div>}
                 </div>
               </NavLink>
-            </div>
+            </div> */}
+            <div className={"w-100 border-bottom-d1d1d1 mb-3"} />
 
             <div className={"w-100 px-sm-2"}>
               <NavLink
@@ -146,96 +161,21 @@ function Layout({ children }) {
                 </div>
               </NavLink>
             </div>
-            <div className={"w-100 px-sm-2"}>
+            <div className=" w-24 px-sm-2 logout-bottom-left  ">
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "side-menu-item side-menu-active"
+                    ? "side-menu-item side-menu-active "
                     : "side-menu-item"
                 }
                 to={"/logout"}
               >
-                <div className={"d-flex"}>
+                <div className={"d-flex "}>
                   <FeatherIcon
                     icon="log-out"
                     className={!open ? "me-2" : "ms-1"}
                   />
                   {!open && <div className={""}>Logout</div>}
-                </div>
-              </NavLink>
-            </div>
-
-            <div className={"w-100 border-bottom-d1d1d1 mb-3"} />
-            <div className={"w-100 px-sm-2"}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "side-menu-item side-menu-active"
-                    : "side-menu-item"
-                }
-                to={"/msg"}
-              >
-                <div className={"d-flex"}>
-                  <FeatherIcon
-                    icon="settings"
-                    className={!open ? "me-2" : "ms-1"}
-                  />
-                  {!open && <div className={""}>Navaneethan</div>}
-                </div>
-              </NavLink>
-            </div>
-
-            <div className={"w-100 px-sm-2"}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "side-menu-item side-menu-active"
-                    : "side-menu-item"
-                }
-                to={"/msg"}
-              >
-                <div className={"d-flex"}>
-                  <FeatherIcon
-                    icon="settings"
-                    className={!open ? "me-2" : "ms-1"}
-                  />
-                  {!open && <div className={""}>Hasan</div>}
-                </div>
-              </NavLink>
-            </div>
-            <div className={"w-100 px-sm-2"}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "side-menu-item side-menu-active"
-                    : "side-menu-item"
-                }
-                to={"/msg"}
-              >
-                <div className={"d-flex"}>
-                  <FeatherIcon
-                    icon="settings"
-                    className={!open ? "me-2" : "ms-1"}
-                  />
-                  {!open && <div className={""}>Hasan</div>}
-                </div>
-              </NavLink>
-            </div>
-            <div className={"w-100 px-sm-2"}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "side-menu-item side-menu-active"
-                    : "side-menu-item"
-                }
-                to={"/msg"}
-              >
-                <div className={"d-flex"}>
-                  <FeatherIcon
-                    icon="settings"
-                    className={!open ? "me-2" : "ms-1"}
-                  />
-                  {!open && <div className={""}>Hasan</div>}
                 </div>
               </NavLink>
             </div>
@@ -253,50 +193,63 @@ function Layout({ children }) {
               </button>
               <div className="collapse navbar-collapse " id="">
                 <ul className="navbar-nav ms-auto align-items-center flex-row">
-                  <li className="nav-item">
-                    <a
-                      className="nav-link active position-relative px-2"
-                      aria-current="page"
-                      href="#"
-                    >
-                      <div className="red-dot" />
-                       <img src={Bell} alt="" />
-                    </a>
-                  </li>
-                  <li className="nav-item px-2">
-                    <a
-                      className="nav-link  position-relative"
-                      aria-current="page"
-                      href="#"
-                    >
-                       <img src={Msg} alt="" />
-                    </a>
-                  </li>
-                  <div> nava</div>
-                  <li className="nav-item px-2">
-                    <a
-                      className="nav-link  position-relative p-0"
-                      aria-current="page"
-                      href="#"
-                    >
-                       <img src={Profile} alt="" />
-                    </a>
-                  </li>
+                  <Dropdown className="bg-white">
+                    <Dropdown.Toggle variant="white" id="dropdown-basic">
+                      <div
+                        className="d-flex align-items-center icon-hover rounded"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <img
+                          src={Profile}
+                          alt="avatar"
+                          height="38px"
+                          width="38px"
+                          className="rounded-circle me-2"
+                        />
+                        <p className="mb-0 text-dark">navaneethan</p>
+                      </div>
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <div className="p-3 text-left">
+                        <p>Navaneethan</p>
+                        <p>nava@gmail.com</p>
+
+                        <button
+                          type="button"
+                          className={
+                            "btn btn-primary tasks-dropdown-btn padding-none d-flex   align-items"
+                          }
+                          onClick={() => {
+                            setModalType("Edit");
+                            setModalShow(true);
+                          }}
+                        >
+                          Profile Edit
+                        </button>
+                      </div>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </ul>
               </div>
             </div>
           </nav>
           <div>
-            <div
-              className={
-                show ? "nav-shadow opacity-100" : "invisible opacity-0"
-              }
-              onClick={() => setShow(!show)}
-            />
+            <div />
             {children}
           </div>
         </div>
       </div>
+      <EditProfile
+        show={modalShow}
+        type={modalType}
+        onHide={() => {
+          setModalShow(false);
+        }}
+        modelData={modalData}
+      />
     </div>
   );
 }
