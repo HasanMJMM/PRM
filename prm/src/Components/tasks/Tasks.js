@@ -2,19 +2,18 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../layout/Layout";
 import FeatherIcon from "feather-icons-react";
 import { values, pick, filter } from "underscore";
-import { TaskForm } from "./TaskForm";
+ import { TaskForm } from "./TaskForm";
 import Dad2 from "../dad/Dad2";
 import axios from "axios";
 import "./Task.css";
-import { useParams } from 'react-router-dom';
+// import TaskForm from "../tasks/TaskForm";
 
 function Tasks(props) {
   const [taskList, setTaskList] = useState([]);
-  const { id } = useParams();
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/taskproject/${id}`)
+      .get("http://127.0.0.1:8000/task")
       .then((response) => {
         setTaskList(response.data);
         console.log("Axios response", response.data);
@@ -23,7 +22,7 @@ function Tasks(props) {
       .catch((error) => {
         console.error("Error fetching task list:", error);
       });
-  }, [id]);
+  }, []);
 
   console.log(taskList);
 

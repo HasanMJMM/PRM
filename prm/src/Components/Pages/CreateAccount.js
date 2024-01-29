@@ -5,7 +5,6 @@ import iconpath2 from "../../assets/icons/lock-icon.svg";
 import iconpath3 from "../../assets/icons/email-icon.svg";
 import iconpath4 from "../../assets/icons/name-icon.svg";
 import logopath from "../../assets/logo.svg";
-import "./auth.css";
 
 // ... (previous imports)
 
