@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./Components/home/home";
-import Tasks from "./Components/tasks/Tasks";
+import Tasks from "./Components/tasks/tasks";
 import Calender from "./Components/calender/calender";
 import Member from "./Components/member/member";
 import Settings from "./Components/settings/settings";
@@ -19,7 +19,8 @@ import CreateAccount from "./Components/Pages/createAccount";
 import DropPage from "./Components/Pages/DropPage";
 import Dad2 from "./Components/dad/Dad2";
 import LogIn from "./Components/Pages/LogIn";
-import CreateAccount from "./Components/Pages/CreateAccount";
+import Members from "./Components/Pages/Memebers";
+import TDboard from "./Components/Pages/taskDashboard";
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
         <Route path="/dad2" element={<Dad2 />} />
         <Route path="/signIn" element={<LogIn />} />
         <Route path="/caccount" element={<CreateAccount />} />
+        <Route path="/members" element={<Members />} />
+        <Route path="/tdb" element={<TDboard />} />
       </Routes>
     </div>
   );

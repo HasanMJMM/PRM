@@ -6,9 +6,9 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeToggle } from "../redux/actions";
 import { EditProfile } from "./EditProfile";
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from "react-bootstrap/Dropdown";
 import { useNavigate } from "react-router-dom";
-
+import logopath from "../assets/logo-white.png";
 
 function Layout({ children }) {
   const dispatch = useDispatch();
@@ -38,7 +38,6 @@ function Layout({ children }) {
   };
   const navigate = useNavigate();
 
-
   return (
     <div className="container-fluid">
       <div className="row flex-nowrap">
@@ -51,7 +50,7 @@ function Layout({ children }) {
         >
           <div className="row">
             <div className="col">
-              {/*<img src={logopath} className={open ? "hide-logo" : "logo-prm"} />*/}
+              <img src={logopath} className={open ? "hide-logo" : "logo-prm"} />
             </div>
             <div className="col">
               <div
@@ -94,7 +93,7 @@ function Layout({ children }) {
                     ? "side-menu-item side-menu-active"
                     : "side-menu-item"
                 }
-                to={"/tasks"}
+                to={"/tdb"}
               >
                 <div className={"d-flex"}>
                   <FeatherIcon
@@ -105,8 +104,24 @@ function Layout({ children }) {
                 </div>
               </NavLink>
             </div>
-
-
+            <div className={"w-100 px-sm-2"}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "side-menu-item side-menu-active"
+                    : "side-menu-item"
+                }
+                to={"/members"}
+              >
+                <div className={"d-flex"}>
+                  <FeatherIcon
+                    icon="user"
+                    className={!open ? "me-2" : "ms-1"}
+                  />
+                  {!open && <div className={""}>Members</div>}
+                </div>
+              </NavLink>
+            </div>
 
             {/* <div className={"w-100 px-sm-2"}>
               <NavLink
@@ -178,7 +193,6 @@ function Layout({ children }) {
               </button>
               <div className="collapse navbar-collapse " id="">
                 <ul className="navbar-nav ms-auto align-items-center flex-row">
-
                   <Dropdown className="bg-white">
                     <Dropdown.Toggle variant="white" id="dropdown-basic">
                       <div
@@ -205,46 +219,25 @@ function Layout({ children }) {
 
                         <button
                           type="button"
-                          className={"btn btn-primary tasks-dropdown-btn padding-none d-flex   align-items"}
+                          className={
+                            "btn btn-primary tasks-dropdown-btn padding-none d-flex   align-items"
+                          }
                           onClick={() => {
                             setModalType("Edit");
                             setModalShow(true);
                           }}
                         >
-
                           Profile Edit
                         </button>
-
-
                       </div>
                     </Dropdown.Menu>
                   </Dropdown>
-
-
-
-                  {/* <div
-                      type="button"
-                      // className={"btn btn-primary tasks-dropdown-btn"}
-                      onClick={() => {
-                        setModalType("Edit");
-                        setModalShow(true);
-                      }}
-                    >
-                      <img src={Profile} alt="" />
-                      
-                    </div> */}
-
                 </ul>
               </div>
             </div>
           </nav>
           <div>
-            <div
-            // className={
-            //   show ? "nav-shadow opacity-100" : "invisible opacity-0"
-            // }
-            // onClick={() => setShow(!show)}
-            />
+            <div />
             {children}
           </div>
         </div>
@@ -252,14 +245,12 @@ function Layout({ children }) {
       <EditProfile
         show={modalShow}
         type={modalType}
-        // update={() => setUpdate(!update)}
         onHide={() => {
           setModalShow(false);
         }}
         modelData={modalData}
       />
     </div>
-
   );
 }
 
